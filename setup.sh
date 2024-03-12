@@ -11,7 +11,8 @@ do
     # シンボリックリンクを作成
     ln -sfnv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
     echo ${f}
-
 done
+
+ln -sfnv  ${DOT_DIRECTORY}/nvim ${HOME}/.config
 
 exit 0
