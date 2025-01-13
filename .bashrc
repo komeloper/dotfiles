@@ -125,11 +125,11 @@ fi
 alias python='python3'
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# if command -v pyenv 1>/dev/null 2>&1; then
+# eval "$(pyenv init -)"
+# fi
 
 # Git Prompt
 if [ -f ~/.git-completion.sh ]; then
@@ -144,3 +144,6 @@ GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
+
+alias copy='xclip -selection clipboard'
+alias paste='xclip -selection clipboard -out'
