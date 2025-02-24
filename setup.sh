@@ -1,5 +1,11 @@
-DOT_DIRECTORY="${HOME}/dotfiles"
+#!/bin/bash
+
+set -eux
+
+DOT_DIRECTORY=$(cd $(dirname $0); pwd)
+# SPECIFY_FILES="aaa bbb"
 SPECIFY_FILES=""
+
 
 for f in .??* ${SPECIFY_FILES}
 do
@@ -7,9 +13,17 @@ do
     [[ ${f} == ".git" ]] && continue
     [[ ${f} == ".DS_Store" ]] && continue
 
+    # パス整形
+    TARGET="${DOT_DIRECTORY}/${f}"
 
     # シンボリックリンクを作成
-    ln -sfnv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
+    if [ -f ${TARGET} ]; then
+        ln -sfnv ${TARGET} ${HOME}/${f}
+
+    else
+        ln -sfnv ${TARGET} ${HOME}
+    fi
+
     echo ${f}
 
 done
