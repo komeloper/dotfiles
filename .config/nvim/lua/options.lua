@@ -6,7 +6,7 @@ opt.showmode = false
 
 -- 行番号
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 
 -- tab / indent
 opt.tabstop = 2
