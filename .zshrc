@@ -162,3 +162,5 @@ esac
 # vim:set ft=zsh:
 
 eval "$(starship init zsh)"
+FPATH="${HOME}/.docker/completions:${FPATH}"
+

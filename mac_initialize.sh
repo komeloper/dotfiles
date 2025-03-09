@@ -17,6 +17,7 @@ brew install \
     tmux \
     neovim \
     starship \
+    lazygit \
     # nodenv \
     volta \
     deno
