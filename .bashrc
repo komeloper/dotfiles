@@ -56,18 +56,6 @@ Wcolor_prompt=
     fi
 fi
 
-# git prmpt
-source ~/.git-prompt.sh
-
-if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[36m\]$(__git_ps1 "(%s)") \[\033[00m\]\$ '
-else
-    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
-fi
-unset color_prompt force_color_prompt
-
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -124,23 +112,4 @@ fi
 # python3 path
 alias python='python3'
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
-
-# Git Prompt
-if [ -f ~/.git-completion.sh ]; then
-  source ~/.git-completion.sh
-fi
-
-if [ -f ~/.git-prompt.sh ]; then
-  source ~/.git-prompt.sh
-fi
-
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKDFILES=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWUPSTREAM=auto
+eval "$(starship init bash)"
