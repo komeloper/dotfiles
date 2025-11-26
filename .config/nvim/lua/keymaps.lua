@@ -33,6 +33,12 @@ map('n', 'T', '<cmd>T<CR>', {
   noremap = true,
 })
 
+-- Insert mode
+map('i', 'jk', '<Esc>', {
+  desc = 'Exit Insert mode',
+  noremap = true,
+})
+
 -- Terminal mode
 map('t', '<Esc><Esc>', '<C-\\><C-n>', {
   desc = 'Exit terminal mode',
